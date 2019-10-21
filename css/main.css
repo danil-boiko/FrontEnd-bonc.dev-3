@@ -21,7 +21,7 @@ h1{
 	border-radius: 10px;
 }
 
-.create{
+.btn-create{
 	width: 25%;
 	height: 100%;
 	float: right;
@@ -29,4 +29,7 @@ h1{
 	border-bottom-right-radius: 10px;
 	border: none;
 	text-transform: uppercase;
+	font-weight: bold ;
+	background-color: grey;
+	color: white;
 }

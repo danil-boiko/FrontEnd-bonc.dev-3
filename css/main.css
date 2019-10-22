@@ -61,13 +61,13 @@ body{
 	float: left;
 }
 
-#task_title{
+.task_title{
 	text-align: center;
 	font-weight: bold;
 	font-size: 1.6em;
 }
 
-#task_desc{
+.task_desc{
 	text-align: center;
 	font-size: 1em;
 }

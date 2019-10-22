@@ -1,6 +1,7 @@
 body{
 	font-family: 'Open Sans', sans-serif;
 	text-decoration: none;
+	background-color: rgb(120, 120, 230);
 }
 
 button:focus{
@@ -11,20 +12,24 @@ button:focus{
 .title-1 h2{
 	width: 90%;
 	text-align: center;
-	padding-top: 2.5%;
+	padding-top: 3.5%;
+	color: white;
+	font-size: 2em;
 }
 
 .title-2 h2{
 	width: 75%;
 	float: left;
 	text-align: center;
-	margin-top: 2.5%;
+	margin-top: 3.5%;
+	color: white;
+	font-size: 2em;
 }
 
 .title-1{
 	width: 100%;
 	height: 5em;
-	background-color: orange;
+	background-color: rgb(57, 57, 241);
 	border-radius: 10px;
 	margin-top: 5%;
 }
@@ -32,7 +37,7 @@ button:focus{
 .title-2{
 	width: 100%;
 	height: 5em;
-	background-color: orange;
+	background-color: rgb(57, 57, 241);
 	border-radius: 10px;
 	margin-top: 5%;
 }
@@ -46,19 +51,24 @@ button:focus{
 	border: none;
 	text-transform: uppercase;
 	font-weight: bold ;
-	background-color: grey;
+	background-color: rgb(122, 122, 122);
 	color: white;
+	font-size: 0.75em;
+}
+
+.btn-create:hover{
+	background-color: black;
 }
 
 .task{
 	width: 100%;
-	height: 7.5em;
+	height: 11em;
 }
 
 #active-task{
 	width: 85%;
-	height: 7.5em;
-	background-color: orange;
+	height: 10em;
+	background-color: rgb(168, 167, 167);
 	border-radius: 10px;
 	margin-top: 1em;
 	float: left;
@@ -84,25 +94,59 @@ button:focus{
 
 .edit-btn{
 	width: 100%;
-	height: 3.5em;
-	background-color: green;
+	height: 6em;
+	background-color: rgb(86, 243, 86);
 	border: none;
 	border-radius: 10px;
+	font-size: 0.75em;
+}
+
+.edit-btn:hover{
+	background-color: rgb(7, 182, 7);
 }
 
 .delete-btn{
 	width: 100%;
-	height: 3.5em;
-	background-color: blue;
+	height: 6em;
+	background-color: rgb(241, 79, 79);
 	border: none;
 	border-radius: 10px;
-	margin-top: 0.5em;
+	margin-top: 1.25em;
+	font-size: 0.75em;
+}
+
+.delete-btn:hover{
+	background-color:rgb(155, 8, 8);
 }
 
 .check{
-	background-color: orange;
+	background-color: rgb(168, 167, 167);
 	border: none;
 	font-size:24px;
 	position: absolute;
 	margin-top: 5px;
+	border-radius: 3px;
+}
+
+.gr{
+	padding-top: 0.75em;
+}
+
+.modal-content{
+	background-color: rgb(92, 91, 91);
+	color: white;
+}
+
+#task-desc-input-edit{
+	margin-top: 1em;
+}
+
+.task_title{
+	width: 95%;
+	margin: auto;
+}
+
+.task_desc{
+	width: 90%;
+	margin: auto;
 }

@@ -11,13 +11,12 @@ function addTask() {
     var newdiv = document.createElement("div"); 
     //заполняем созданный блок
     var a = generateTaskId();
-    newdiv.innerHTML = `<div class="task" id="task_${a}"><div id='active-task'><div class='task_title' id='task_title_${a}'>${name}</div><div class='task_desc' id="task_desc_${a}">${desc}</div></div><div class='task-buttons'><button class='edit-btn' id="btn_${a}" data-toggle="modal" data-target="#editModal" onclick="id_Task(this)">E</button><button class='delete-btn' onclick="deleteTask()">C</button></div></task>`;
+    newdiv.innerHTML = `<div class="task" id="task_${a}"><div id='active-task'><div class='task_title' id='task_title_${a}'>${name}</div><div class='task_desc' id="task_desc_${a}">${desc}</div></div><div class='task-buttons'><button class='edit-btn' id="btn_${a}" data-toggle="modal" data-target="#editModal" onclick="id_Task(this)">EDIT</button><button class='delete-btn' id="del_btn_${a}" onclick="deleteTask(this)">DEL</button></div></task>`;
     document.getElementById("parentId").append(newdiv);
 }
 
 function id_Task(obj){
     btn_id = obj.id;
-    console.log(btn_id)
     btn_id = btn_id.substring(4,btn_id.length + 1);
 }
 
@@ -33,6 +32,11 @@ function editTask() {
     new_desc.innerHTML = `${desc}`;
 }
 
-function deleteTask(){
-    return this.document.getElementById("id").remove();
+function deleteTask(obj){
+    var focus_task_id = obj.id;
+    console.log(focus_task_id);
+    focus_task_id = focus_task_id.substring(8,focus_task_id.length + 1);
+    console.log(focus_task_id);
+    var task = document.getElementById(`task_${focus_task_id}`);
+    task.remove();
 }

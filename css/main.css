@@ -14,7 +14,7 @@ button:focus{
 	text-align: center;
 	padding-top: 3.5%;
 	color: white;
-	font-size: 2em;
+	font-size: 1.5em;
 }
 
 .title-2 h2{
@@ -23,7 +23,7 @@ button:focus{
 	text-align: center;
 	margin-top: 3.5%;
 	color: white;
-	font-size: 2em;
+	font-size: 1.5em;
 }
 
 .title-1{
@@ -32,6 +32,7 @@ button:focus{
 	background-color: rgb(57, 57, 241);
 	border-radius: 10px;
 	margin-top: 5%;
+	text-align:center;
 }
 
 .title-2{
@@ -58,6 +59,11 @@ button:focus{
 
 .btn-create:hover{
 	background-color: black;
+	transition: 1.5s;
+}
+
+.btn-create:not(:hover){
+	transition: 1.5s;
 }
 
 .task{
@@ -103,6 +109,11 @@ button:focus{
 
 .edit-btn:hover{
 	background-color: rgb(7, 182, 7);
+	transition: 1s;
+}
+
+.edit-btn:not(:hover){
+	transition: 1s;
 }
 
 .delete-btn{
@@ -113,10 +124,16 @@ button:focus{
 	border-radius: 10px;
 	margin-top: 1.25em;
 	font-size: 0.75em;
+	color: white;
 }
 
 .delete-btn:hover{
 	background-color:rgb(155, 8, 8);
+	transition: 1s;
+}
+
+.delete-btn:not(:hover){
+	transition: 1s;
 }
 
 .check{

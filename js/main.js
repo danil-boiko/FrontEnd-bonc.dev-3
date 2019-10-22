@@ -11,8 +11,8 @@ function addTask() {
     var newdiv = document.createElement("div"); 
     //заполняем созданный блок
     var a = generateTaskId();
-    newdiv.innerHTML = `<div class="task" id="task_${a}"><div id='active-task'><div class='task_title' id='task_title_${a}'>${name}</div><div class='task_desc' id="task_desc_${a}">${desc}</div></div><div class='task-buttons'><button class='edit-btn' id="btn_${a}" data-toggle="modal" data-target="#editModal" onclick="id_Task(this)">EDIT</button><button class='delete-btn' id="del_btn_${a}" onclick="deleteTask(this)">DEL</button></div></task>`;
-    document.getElementById("parentId").append(newdiv);
+    newdiv.innerHTML = `<div class="task" id="task_${a}"><div id='active-task'><button class="check" id="btn_check_${a}" onclick="checkTask(this)">&#9989;</button><div class='task_title' id='task_title_${a}'>${name}</div><div class='task_desc' id="task_desc_${a}">${desc}</div></div><div class='task-buttons'><button class='edit-btn' id="btn_${a}" data-toggle="modal" data-target="#editModal" onclick="id_Task(this)">EDIT</button><button class='delete-btn' id="del_btn_${a}" onclick="deleteTask(this)">DEL</button></div></task>`;
+    document.getElementById("first_parentId").append(newdiv);
 }
 
 function id_Task(obj){
@@ -21,7 +21,6 @@ function id_Task(obj){
 }
 
 function editTask() {
-    console.log(btn_id)
     var name = document.getElementById("task-name-input-edit").value; //забираем название задачи
     var desc = document.getElementById("task-desc-input-edit").value; //забираем описание задачи
     var new_name = document.getElementById(`task_title_${btn_id}`);
@@ -39,4 +38,21 @@ function deleteTask(obj){
     console.log(focus_task_id);
     var task = document.getElementById(`task_${focus_task_id}`);
     task.remove();
+}
+
+function checkTask(obj){
+    var check_task_id = obj.id;
+    console.log(check_task_id);
+    check_task_id = check_task_id.substring(10,check_task_id.length + 1);
+    console.log(check_task_id);
+    var name = document.getElementById(`task_title_${check_task_id}`).innerHTML; //забираем название задачи
+    var desc = document.getElementById(`task_desc_${check_task_id}`).innerHTML; //забираем описание задачи
+    console.log(name);
+    console.log(desc);
+    var clone_div = document.createElement("div");
+    clone_div.innerHTML = `<div class="task" id="task_${check_task_id}"><div id='active-task'><button class="check" id="btn_check_${check_task_id}" onclick="checkTask(this)">&#9989;</button><div class='task_title' id='task_title_${check_task_id}'>${name}</div><div class='task_desc' id="task_desc_${check_task_id}">${desc}</div></div><div class='task-buttons'><button class='edit-btn' id="btn_${check_task_id}" data-toggle="modal" data-target="#editModal" onclick="id_Task(this)">EDIT</button><button class='delete-btn' id="del_btn_${check_task_id}" onclick="deleteTask(this)">DEL</button></div></task>`;
+    var div = document.getElementById(`task_${check_task_id}`);
+    div.remove();
+    clone_div.id = `task_check_${check_task_id}`;
+    document.getElementById("second_parentId").append(clone_div);
 }
